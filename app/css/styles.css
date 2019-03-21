@@ -1,0 +1,429 @@
+/*
+
+#E76C67 // orange that was used before
+
+#2699FB // blue that was used before
+
+#444444 // soft black
+
+-------
+
+#0247FE // blue primary color
+
+#FB9902 // orange second color
+
+#FD5308 // left of orange
+
+#FABC02 // right of orange
+
+*/
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-family: 'Nunito', sans-serif;
+
+    color: #444444;
+
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 1.2;
+}
+
+h2, h3 {
+    color: #FD5308;
+}
+
+h4, h5 {
+    color: #FB9902;
+}
+
+header {
+    background-color: #0247FE;
+}
+
+header a {
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+
+header a:hover {
+    text-decoration: none;
+    color: #FB9902;
+    /*opacity: 0.5;*/
+}
+
+footer {
+    background-color: #0247FE;
+    height: 100px;
+    text-align: center;
+}
+
+footer a {
+    display: inline-block;
+    color: white;
+    margin: 10px 30px 10px 30px;
+}
+
+footer p {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+.profile-pic {
+    display: block;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.underConstruction {
+    color: #FD5308;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+/** Mobile view */
+body {
+    display: grid;
+    grid-template-areas:
+            "header"
+            "picture"
+            "whoAmI"
+            "experiences"
+            "technologies"
+            "interests"
+            "contact"
+            "footer";
+    grid-template-columns:
+            1fr;    /** 1 column */
+    grid-template-rows:
+            340px   /** header */
+            1fr     /** picture */
+            1fr     /** whoAmI */
+            1fr     /** experiences */
+            1fr     /** technologies */
+            1fr     /** interests */
+            1fr     /** contact */
+            100px;  /** footer */
+    grid-gap: 25px;
+    height: 100vh;
+    margin: 0;
+}
+
+#areaHeader {
+    grid-area: header;
+}
+
+#areaPicture {
+    grid-area: picture;
+    padding-top: 40px;
+}
+
+#areaFooter {
+    grid-area: footer;
+}
+
+#areaWhoami {
+    grid-area: whoAmI;
+}
+
+#areaExperiences {
+    grid-area: experiences;
+}
+
+#areaTechnologies {
+    grid-area: technologies;
+}
+
+#areaInterests {
+    grid-area: interests;
+}
+
+#areaContact {
+    grid-area: contact;
+}
+
+.style-of-area {
+    color: #444444;
+
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    padding: 25px 25px
+}
+
+.languages-card, .frameworks-card, .web-frameworks-card, .methodologies-card,
+.databases-card, .ci-card, .source-controls-card, .clouds-card  {
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    padding: 5px 5px 5px;
+}
+
+.upper-border-cv {
+    border-top: 1px solid #efefef;
+}
+
+.technology-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+li {
+    list-style-type: none;
+}
+
+li:before {
+    content: "\f105";
+    /*    content: "\f0da";*/
+    font-family: 'Font Awesome\ 5 Free';
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    /** Some icons in font awesome 5 not working without font-weight: 900; */
+    font-weight: 900;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.go-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.go-up.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.go-up a {
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5em;
+    border-radius: 50%;
+    border: none;
+    height: 65px;
+    width: 65px;
+    background-color: #FD5308;
+    color: #fff;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, .4);
+}
+
+.showLanguages, .showFrameworks, .showWebFrameworks, .showMethodologies,
+.showDatabases, .showCI, .showSourceControls, .showClouds,
+.showPortfolio, .showBusy, .showExperiences, .showConferences, .showCourses  {
+    display: none;
+}
+
+.show {
+    display: block!important;
+}
+
+.technology-link, .information-link {
+    font-weight: bold;
+    color: #FD5308;
+}
+
+a.technology-link:visited, a.information-link:visited {
+    text-decoration: none;
+    color: #FD5308;
+}
+
+a.technology-link:hover, a.information-link:hover {
+    color: #FD5308;
+}
+
+a.technology-link:active, a.information-link:active {
+    text-decoration: none;
+    color: #FD5308;
+}
+
+.dotsHide {
+    display: none!important;
+}
+
+#languagesDots, #frameworksDots, #webFrameworksDots, #methodologiesDots,
+#databasesDots, #ciDots, #sourceControlsDots, #cloudsDots, #experiencesDots {
+    display: block;
+}
+
+.add-space {
+    margin-top: 25px;
+}
+
+/** Desktop view */
+@media screen and (min-width: 1200px) {
+    body {
+        grid-template-areas:
+                "header header header"
+                ". picture ."
+                ". whoAmI ."
+                ". experiences ."
+                ". technologies ."
+                ". interests ."
+                ". contact ."
+                "footer footer footer";
+        grid-template-columns:
+                25% 1fr 25%; /** 3 columns */
+        grid-template-rows:
+                45px    /** header */
+                1fr     /** picture */
+                1fr     /** whoAmI */
+                1fr     /** experiences */
+                1fr     /** technologies */
+                1fr     /** interests */
+                1fr     /** contact */
+                100px;  /** footer */
+    }
+
+    nav a {
+        display: inline-block;
+        text-align: center;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    /* Whoami */
+    nav > a:nth-child(1) {
+        grid-column: 4;
+        padding-top: 10px;
+    }
+
+    /* Experiences */
+    nav > a:nth-child(2) {
+        grid-column: 5;
+        padding-top: 10px;
+    }
+
+    /* Technologies */
+    nav > a:nth-child(3) {
+        grid-column: 6;
+        padding-top: 10px;
+    }
+
+    /* Interests */
+    nav > a:nth-child(4) {
+        grid-column: 7;
+        padding-top: 10px;
+    }
+
+    /* Blog */
+    nav > a:nth-child(5) {
+        grid-column: 8;
+        padding-top: 10px;
+    }
+
+    /* Contact */
+    nav > a:nth-child(6) {
+        grid-column: 9;
+        padding-top: 10px;
+    }
+
+    /* GitHub */
+    nav > a:nth-child(7) {
+        grid-column: 11;
+        padding-top: 5px;
+    }
+
+    /* LinkedIn */
+    nav > a:nth-child(8) {
+        grid-column: 12;
+        padding-top: 5px;
+    }
+
+    nav a:hover {
+        color: #FD5308;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        width: 0%;
+        background-color: #E76C67;
+
+        transition: all ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        width: 100%;
+    }
+
+    footer {
+        height: 100px;
+    }
+
+    footer a {
+        margin: 10px 50px 10px 50px;
+    }
+
+    .technology-container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .languages-card {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+    }
+
+    .frameworks-card {
+        grid-column: 2 / 2;
+        grid-row: 1 / 3;
+    }
+
+    .web-frameworks-card {
+        grid-row: 2 / 2;
+    }
+
+    .ci-card {
+        grid-row: 1 / 1;
+    }
+
+    .go-up a {
+        height: 95px;
+        width: 95px;
+    }
+
+    .showLanguages, .showFrameworks, .showWebFrameworks, .showMethodologies,
+    .showDatabases, .showCI, .showSourceControls, .showClouds,
+    .showPortfolio, .showBusy, .showExperiences, .showConferences, .showCourses {
+        display: block;
+    }
+
+    #readMoreLanguages, #readMoreFrameworks, #readMoreWebFrameworks, #readMoreMethodologies,
+    #readMoreDatabases, #readMoreCI, #readMoreSourceControls, #readMoreClouds,
+    #readMoreConferences, #readMoreCourses, #readMoreBusy, #readMorePortfolio,
+    #readMoreExperiences {
+        display: none;
+    }
+
+    #languagesDots, #frameworksDots, #webFrameworksDots, #methodologiesDots,
+    #databasesDots, #ciDots, #sourceControlsDots, #cloudsDots, #experiencesDots {
+        display: none!important;
+    }
+}
