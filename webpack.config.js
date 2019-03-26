@@ -43,7 +43,8 @@ const config = {
             {from: './app/css/styles.css', to: 'css/styles.css'},
             {from: './app/CV-Jeroen-Wolf-NL.pdf', to: 'CV-Jeroen-Wolf-NL.pdf'},
             {from: './app/index.html', to: 'index.html'},
-            {from: './app/blog.html', to: 'blog.html'}
+            {from: './app/blog.html', to: 'blog.html'},
+            {from: './app/sitemap.xml', to: 'sitemap.xml'}
         ])
     ]
 }
