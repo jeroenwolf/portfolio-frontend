@@ -94,6 +94,25 @@ The following command will deploy the front-end files from the 'dist' folder to 
 firebase deploy
 ```
 
+## Git tag
+
+Create an annotated tag in Git:
+```
+git tag -a v1.0.3 -m "Created tag v1.0.3"
+```
+
+Push a single tag:
+```
+git push origin <tag_name>
+```
+
+or
+
+Push all tags:
+```
+git push --tags
+```
+
 ## Useful websites to determine the speed of your own website
 Optimize your own website:
 
