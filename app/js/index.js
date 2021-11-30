@@ -36,70 +36,24 @@
         }
     }
 
-    document.getElementById("readMoreLanguages").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showLanguages", "readMoreLanguages", "languagesDots", changeLinkTextForTechnology);
-    });
+    const listener = (classToToggle, elementByIdLinkReadMore, elementByIdDots, changeLinkTextForTechnology) => () => {
+        changeTextAndToggleElements(classToToggle, elementByIdLinkReadMore, elementByIdDots, changeLinkTextForTechnology);
+    };
 
-    document.getElementById("readMoreFrameworks").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showFrameworks", "readMoreFrameworks", "frameworksDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreWebFrameworks").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showWebFrameworks", "readMoreWebFrameworks", "webFrameworksDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreMethodologies").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showMethodologies", "readMoreMethodologies", "methodologiesDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreDatabases").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showDatabases", "readMoreDatabases", "databasesDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreCI").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showCI", "readMoreCI", "ciDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreSourceControls").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showSourceControls", "readMoreSourceControls", "sourceControlsDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreClouds").addEventListener('click', () => {
-        const changeLinkTextForTechnology = true;
-        changeTextAndToggleElements("showClouds", "readMoreClouds", "cloudsDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMorePortfolio").addEventListener('click', () => {
-        const changeLinkTextForTechnology = false;
-        changeTextAndToggleElements("showPortfolio", "readMorePortfolio", "", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreBusy").addEventListener('click', () => {
-        const changeLinkTextForTechnology = false;
-        changeTextAndToggleElements("showBusy", "readMoreBusy", "", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreExperiences").addEventListener('click', () => {
-        const changeLinkTextForTechnology = false;
-        changeTextAndToggleElements("showExperiences", "readMoreExperiences", "experiencesDots", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreConferences").addEventListener('click', () => {
-        const changeLinkTextForTechnology = false;
-        changeTextAndToggleElements("showConferences", "readMoreConferences", "", changeLinkTextForTechnology);
-    });
-
-    document.getElementById("readMoreCourses").addEventListener('click', () => {
-        const changeLinkTextForTechnology = false;
-        changeTextAndToggleElements("showCourses", "readMoreCourses", "", changeLinkTextForTechnology);
-    });
+    document.getElementById("readMoreLanguages").addEventListener('click', listener("showLanguages", "readMoreLanguages", "languagesDots", true));
+    document.getElementById("readMoreIdes").addEventListener('click', listener("showIdes", "readMoreIdes", "idesDots", true));
+    document.getElementById("readMoreFrameworks").addEventListener('click', listener("showFrameworks", "readMoreFrameworks", "frameworksDots", true));
+    document.getElementById("readMoreWebFrameworks").addEventListener('click', listener("showWebFrameworks", "readMoreWebFrameworks", "webFrameworksDots", true));
+    document.getElementById("readMoreMethodologies").addEventListener('click', listener("showMethodologies", "readMoreMethodologies", "methodologiesDots", true));
+    document.getElementById("readMoreDatabases").addEventListener('click', listener("showDatabases", "readMoreDatabases", "databasesDots", true));
+    document.getElementById("readMoreCI").addEventListener('click', listener("showCI", "readMoreCI", "ciDots", true));
+    document.getElementById("readMoreSourceControls").addEventListener('click', listener("showSourceControls", "readMoreSourceControls", "sourceControlsDots", true));
+    document.getElementById("readMoreClouds").addEventListener('click', listener("showClouds", "readMoreClouds", "cloudsDots", true));
+    document.getElementById("readMorePortfolio").addEventListener('click', listener("showPortfolio", "readMorePortfolio", "", false));
+    document.getElementById("readMoreBusy").addEventListener('click', listener("showBusy", "readMoreBusy", "", false));
+    document.getElementById("readMoreExperiences").addEventListener('click', listener("showExperiences", "readMoreExperiences", "experiencesDots", false));
+    document.getElementById("readMoreConferences").addEventListener('click', listener("showConferences", "readMoreConferences", "", false));
+    document.getElementById("readMoreCourses").addEventListener('click', listener("showCourses", "readMoreCourses", "", false));
 
     function changeTextAndToggleElements(classToToggle, elementByIdLinkReadMore, elementByIdDots, changeLinkTextForTechnology) {
         const elementsToToggle = document.querySelectorAll("." + classToToggle);

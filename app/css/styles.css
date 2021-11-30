@@ -163,7 +163,7 @@ body {
     padding: 25px 25px
 }
 
-.languages-card, .frameworks-card, .web-frameworks-card, .methodologies-card,
+.languages-card, .ides-card, .frameworks-card, .web-frameworks-card, .methodologies-card,
 .databases-card, .ci-card, .source-controls-card, .clouds-card  {
     border: 1px solid #efefef;
     border-radius: 10px;
@@ -228,7 +228,7 @@ ul {
     box-shadow: 0px 0px 40px rgba(0, 0, 0, .4);
 }
 
-.showLanguages, .showFrameworks, .showWebFrameworks, .showMethodologies,
+.showLanguages, .showIdes, .showFrameworks, .showWebFrameworks, .showMethodologies,
 .showDatabases, .showCI, .showSourceControls, .showClouds,
 .showPortfolio, .showBusy, .showExperiences, .showConferences, .showCourses  {
     display: none;
@@ -261,7 +261,7 @@ a.technology-link:active, a.information-link:active {
     display: none!important;
 }
 
-#languagesDots, #frameworksDots, #webFrameworksDots, #methodologiesDots,
+#languagesDots, #idesDots, #frameworksDots, #webFrameworksDots, #methodologiesDots,
 #databasesDots, #ciDots, #sourceControlsDots, #cloudsDots, #experiencesDots {
     display: block;
 }
@@ -330,26 +330,20 @@ a.technology-link:active, a.information-link:active {
         padding-top: 10px;
     }
 
-    /* Blog */
-    nav > a:nth-child(5) {
-        grid-column: 8;
-        padding-top: 10px;
-    }
-
     /* Contact */
-    nav > a:nth-child(6) {
+    nav > a:nth-child(5) {
         grid-column: 9;
         padding-top: 10px;
     }
 
     /* GitHub */
-    nav > a:nth-child(7) {
+    nav > a:nth-child(6) {
         grid-column: 11;
         padding-top: 5px;
     }
 
     /* LinkedIn */
-    nav > a:nth-child(8) {
+    nav > a:nth-child(7) {
         grid-column: 12;
         padding-top: 5px;
     }
@@ -409,20 +403,20 @@ a.technology-link:active, a.information-link:active {
         width: 95px;
     }
 
-    .showLanguages, .showFrameworks, .showWebFrameworks, .showMethodologies,
+    .showLanguages, .showIdes, .showFrameworks, .showWebFrameworks, .showMethodologies,
     .showDatabases, .showCI, .showSourceControls, .showClouds,
     .showPortfolio, .showBusy, .showExperiences, .showConferences, .showCourses {
         display: block;
     }
 
-    #readMoreLanguages, #readMoreFrameworks, #readMoreWebFrameworks, #readMoreMethodologies,
+    #readMoreLanguages, #readMoreIdes, #readMoreFrameworks, #readMoreWebFrameworks, #readMoreMethodologies,
     #readMoreDatabases, #readMoreCI, #readMoreSourceControls, #readMoreClouds,
     #readMoreConferences, #readMoreCourses, #readMoreBusy, #readMorePortfolio,
     #readMoreExperiences {
         display: none;
     }
 
-    #languagesDots, #frameworksDots, #webFrameworksDots, #methodologiesDots,
+    #languagesDots, #idesDots, #frameworksDots, #webFrameworksDots, #methodologiesDots,
     #databasesDots, #ciDots, #sourceControlsDots, #cloudsDots, #experiencesDots {
         display: none!important;
     }
